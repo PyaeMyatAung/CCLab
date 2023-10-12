@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(255, 255, 255);
+    color: rgb(242, 82, 138);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+h1{
+    font-size: 100px;
+}
+big{
+    font-size: 100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
+}
+#red{
+    color: rgb(237, 70, 70);
+}
+#green{
+    color:rgb(113, 235, 113);
+}
+#gold{
+    color: rgb(238, 207, 113);
+}
+a{
+
+}
