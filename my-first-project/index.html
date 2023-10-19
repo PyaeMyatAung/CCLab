@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 </head>
 <title>My First Page</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
 
 <body>
-    <h1 class ="big">Hello world!</h1>
-    <p>This is the first website I'm making</p>
-    <h2 class ="big">Posting my project</h2>
-    <a href="https://wp.nyu.edu/nyushanghai-sarah/"><p>This is my website</p></a>
-    <h2 class ="big">Putting an image here </h2>
-    <img src="cat.gif" alt="typingcat" >
-    
+    <div id="title">
+        <h1 class="big">Hello world!</h1>
+    </div>
+    <div id="content">
+        <div class="two-columns">
+            <div class="left">
+                <div id="p5-canvas"></div>
+            </div>
+            <div class="right">
+                <p>This is the first website I'm making</p>
+                <a href="https://wp.nyu.edu/nyushanghai-sarah/">
+                    <p>This is my website</p>
+                </a>
+                <h2 id="red">Posting my project</h2>
+                <h2>Putting an image here </h2>
+                <button onclick=" alert('Hello!') ">Click Me!</button>
+            </div>
+        </div>
+    <div> <p>The rich phenotypic diversity in coat and plumage color in domestic animals is primarily caused by
+        direct selection on pigmentation phenotypes. Characteristic features are selection for viable
+        alleles with no or only minor negative pleiotropic effects on other traits, and that alleles often
+        evolve by accumulating several consecutive mutations in the same gene. This review provides examples
+        of mutations that disrupt or create pigmentation patterns. White spotting patterns in domestic
+        animals are often caused by mutations in KIT, microphthalmia transcription factor (MITF), or
+        endothelin receptor B (EDNRB), impairing migration or survival of melanoblasts. Wild boar piglets
+        are camouflage-colored and show a characteristic pattern of dark and light longitudinal stripes.
+        This pattern is disrupted by mutations in Melanocortin 1 receptor (MC1R), implying that a functional
+        MC1R receptor is required for wild-type camouflage color in pigs. The great majority of pig breeds
+        carry MC1R mutations disrupting wild-type color and different mutations causing dominant black color
+        were independently selected in European and Asian domestic pigs. The European allele evolved into a
+        new allele creating a pigmentation pattern, black spotting, after acquiring a second mutation. This
+        second mutation, an insertion of two C nucleotides in a stretch of 6 Cs, is somatically unstable and
+        creates black spots after the open reading frame has been restored by somatic mutations. In the
+        horse, mutations located in an enhancer downstream of TBX3 disrupt the Dun pigmentation pattern
+        present in wild equids, a camouflage color where pigmentation on the flanks is diluted. A
+        fascinating example of the creation of a pigmentation pattern is Sex-linked barring in chicken which
+        is caused by the combined effect of both regulatory and coding mutations affecting the function of
+        CDKN2A, a tumor suppressor gene associated with familial forms of melanoma in human. These examples
+        illustrate how evolution of pigmentation patterns in domestic animals constitutes a model for
+        evolutionary change in natural populations.</p></div>
+    </div>
+    <!-- <div class ="one-column">
+            
+        </div> -->
+    <div id="footer">
+        <p>This is a CClab project made bt me in Fall 2023</p>
+    </div>
+    <script src="js/sketch.js" type="text/javascript">
+    </script>
+
 </body>
+
 </html>
