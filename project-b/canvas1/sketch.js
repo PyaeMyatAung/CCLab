@@ -1,70 +1,115 @@
-
 let girl;
-let x, y;
-let r, b, g;
-let f, s, t;
-let h1, h2;
+let myMoon;
+let mysound;
+
+
 function preload(){
   girl = loadImage("girl.png")
-  
+  mysound = loadSound("assets/sound1.mp3")
 }
 function setup() {
   let canvas = createCanvas(400, 400);
   canvas.parent("p5-canvas");
-  r = 247;
-  b = 239;
-  g = 151;
-  f = 247;
-  s =239;
-  t =151;
-  h1=10;
-  h2=10;
+  myMoon= new moon(180,210);
+
   
 }
 
+
 function draw() {
   background(247, 239, 151);
-  noStroke();
-  fill(r, b, g);
-  square(0,0,400);
-  fill(223, 247, 237);
-  circle(180, 210, 100);//cloth
-  fill(f, s, t);
-  circle(310, 66, 90);//moon
-  fill(r, b,g);
-  circle(270, 66,100);//cresent
+  myMoon.display();
   image(girl, 0, 0);
-  fill(69, 38, 12);
+  myMoon.eyes();
+  myMoon.sleep();
+  myMoon.restart();
+  
+  if( mouseIsPressed){
+    if(mysound.isPlaying()==false){
+mysound.play(); 
+}else{
+mysound.pause();
+}
+}
+  
+
+}
+
+
+
+
+class moon{
+  constructor(x,y){
+    this.x= x;
+    this.y=y;
+    this.r = 247;
+    this.b = 239;
+    this.g = 151;
+    this.f = 247;
+    this.s =239;
+    this.t =151;
+    this.h1=10;
+    this.h2=10;
+   }
+  
+  
+  display(){
   push();
-  translate(70,200);
-  rotate(-PI/6);
-  ellipse(-12,-3,12, h1);//left eye
-  ellipse(27,-8, 12,h2);//right eye
+  translate(this.x, this.y);
+  noStroke();
+  fill(this.r, this.b, this.g);
+  square(-180,-210,400);
+  fill(223, 247, 237);
+  circle(0, 0, 100);//cloth 180, 210
+  fill(this.f, this.s, this.t);
+  circle(130, -144, 90);//moon
+  fill(this.r, this.b,this.g);
+  circle(270, 66,100);//cresent
+  
+ 
   pop();
-  if(mouseIsPressed == true){
-    r=0;
-    b=0;
-    g=0;
-    f=245;
-    s=226;
-    t=22;
-    h1=2;
-    h2=2;
+  }
+  eyes() {
+  push();
+  translate(this.x,this.y);
+  rotate(-PI/6);
+  fill(69, 38, 12);
+  ellipse(-105,-65,12, this.h1);//left eye
+  ellipse(-65,-70, 12,this.h2);//right eye
+  pop();
+  }
+  
+  sleep(){
+    if(mouseIsPressed == true){
+    this.r=0;
+    this.b=0;
+    this.g=0;
+    this.f=245;
+    this.s=226;
+    this.t=22;
+    this.h1=2;
+    this.h2=2;
+    
     
   }
- if(keyIsPressed) {
-   if(key == "r"){
-    r=247;
-    b=239;
-    g=151;  
-    f = r;
-    s = b;
-    t = g;
-    h1=10;
-    h2=10;
+    
+  }
+  
+  restart(){
+    if(keyIsPressed) {
+    if(keyCode == ENTER){
+    this.r=247;
+    this.b=239;
+    this.g=151;  
+    this.f = this.r;
+    this.s = this.b;
+    this.t = this.g;
+    this.h1=10;
+    this.h2=10;
    }
  }
 
+  }
 }
 
 

@@ -1,11 +1,18 @@
-let NUM_OF_lines = 25; // Decide the initial number of particles.
+
+
+let NUM_OF_lines = 25; //number of particles.
 let x,y;
 let lines = [];
 let speed;
+let mysound;
+
+function preload(){
+  mysound = loadSound("assets/sound3.mp3")
+}
 
 function setup() {
-    let canvas = createCanvas(400, 500);
-    canvas.parent("p5-canvas");
+  let canvas = createCanvas(400, 500);
+  canvas.parent("p5-canvas");
   speed = random(0.005, 0.01)
   y=height/2;
   
@@ -19,6 +26,14 @@ function setup() {
 
 function draw() {
   background(0,50);
+  
+    if( mouseIsPressed){
+        if(mysound.isPlaying()==false){
+          mysound.play(); 
+        }else{
+          mysound.pause();
+        }
+  }
     // update and display lines
   for (let i = 0; i < lines.length; i++) {
     let p = lines[i];
@@ -27,7 +42,7 @@ function draw() {
   
   //rabbit
   noStroke();
-  x=noise(frameCount*speed)*width;
+  x=noise(frameCount*speed*0.5)*width;
   fill(225);
   circle(x-7, y+45, 70);//body
   fill(220);
