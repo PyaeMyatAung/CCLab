@@ -1,7 +1,9 @@
+
 let Coral;
 let Coral2;
 let mysand;
 let myrabbit;
+let mysound;
 
 let bx=[];//bubble width position
 let by=[];//bubble height position
@@ -14,11 +16,12 @@ let n = 40;//number of bubbles
 function preload(){
   Coral=loadImage("Coral.png");
   Coral2 =loadImage("Coral2.png");
+  mysound=loadSound("assets/sound4.mp3")
 }
 
 function setup() {
-    let canvas = createCanvas(1000, 500);
-    canvas.parent("p5-canvas");
+  let canvas = createCanvas(1000, 500);
+  canvas.parent("p5-canvas");
   mysand = new sand(120,515);
   myrabbit = new rabbit(width/2, height/2)
    for (let i = 0; i < n; i++) {
@@ -38,6 +41,14 @@ function draw() {
   image(Coral2,670,230);
   myrabbit.display();
   myrabbit.move();
+  
+  if( mouseIsPressed){
+    if(mysound.isPlaying()==false){
+      mysound.play(); 
+    }else{
+      mysound.pause();
+  }
+  }
   
   //change the speed of the bubble
     for (let i = 0; i < n; i++) {

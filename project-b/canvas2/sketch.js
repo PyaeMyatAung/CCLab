@@ -1,10 +1,11 @@
+
 let grass;
 let mysound;
 let myRabbit;
 let myCloud;
 let myCloud2;
 let myCloud3;
-
+let mycaption;
 
 function preload(){
   grass = loadImage("grass.png");
@@ -18,6 +19,7 @@ function setup() {
   myCloud = new cloud(50, 90);
   myCloud2= new cloud(400, 130);
   myCloud3= new cloud(850,80);
+  mycaption = new caption(20, 20);
   
   
   
@@ -37,6 +39,7 @@ function draw() {
   myCloud2.move();
   myCloud3.display();
   myCloud3.move();
+  mycaption.display();
   
  if( mouseIsPressed){
    if(mysound.isPlaying()==false){
@@ -62,9 +65,7 @@ class Rabbit{
     push();
     translate(this.x, this.y);
     fill(0);
-    noStroke();
-    
-    
+    noStroke();   
   
   //rabbit
     fill(225);
@@ -139,6 +140,21 @@ class cloud{
     if(this.x>=width){
        this.x=0;
        } 
+    
+  }
+}
+
+class caption{
+  constructor(x, y){
+    this.x = x;
+    this.y= y;
+  }
+  display(){
+    textSize(15);
+    text("Click to start!",this.x, this.y, 300, 50);
+    text("Use the RIGHT ARROW button.", this.x, this.y+25,300, 50);
+    text("To restart, press ENTER", this.x, this.y+50,300, 50);
+        
     
   }
 }
