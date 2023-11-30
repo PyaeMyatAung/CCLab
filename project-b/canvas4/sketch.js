@@ -4,6 +4,7 @@ let Coral2;
 let mysand;
 let myrabbit;
 let mysound;
+let mycaption;
 
 let bx=[];//bubble width position
 let by=[];//bubble height position
@@ -23,7 +24,9 @@ function setup() {
   let canvas = createCanvas(1000, 500);
   canvas.parent("p5-canvas");
   mysand = new sand(120,515);
-  myrabbit = new rabbit(width/2, height/2)
+  myrabbit = new rabbit(width/2, height/2);
+  mycaption = new caption(20,20);
+
    for (let i = 0; i < n; i++) {
     bx[i] = random(width);
     by[i] = height+ random(100);
@@ -36,6 +39,7 @@ function setup() {
 function draw() {
   noStroke();
   background(90, 217, 230);
+  mycaption.display();
   mysand.display();
   image(Coral,0,250);
   image(Coral2,670,230);
@@ -131,6 +135,20 @@ class rabbit{
   move(){
     this.y=noise(frameCount*this.speed)*height;
    
+    
+  }
+}
+
+class caption{
+  constructor(x, y){
+    this.x = x;
+    this.y= y;
+  }
+  display(){
+    fill(19, 47, 82);
+    textSize(20);
+    text("Click to listen what's happening!",this.x, this.y, 300, 50);
+        
     
   }
 }

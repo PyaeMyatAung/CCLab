@@ -5,6 +5,7 @@ let x,y;
 let lines = [];
 let speed;
 let mysound;
+let mycaption;
 
 function preload(){
   mysound = loadSound("assets/sound3.mp3")
@@ -13,6 +14,7 @@ function preload(){
 function setup() {
   let canvas = createCanvas(400, 500);
   canvas.parent("p5-canvas");
+  mycaption= new caption(20,20);
   speed = random(0.005, 0.01)
   y=height/2;
   
@@ -26,7 +28,7 @@ function setup() {
 
 function draw() {
   background(0,50);
-  
+  mycaption.display();
     if( mouseIsPressed){
         if(mysound.isPlaying()==false){
           mysound.play(); 
@@ -95,4 +97,17 @@ class Lines {
   }
 
 
+}
+class caption{
+  constructor(x, y){
+    this.x = x;
+    this.y= y;
+  }
+  display(){
+    fill(252, 218, 124);
+    textSize(15);
+    text("Click to start!",this.x, this.y, 300, 50);
+        
+    
+  }
 }
