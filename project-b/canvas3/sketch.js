@@ -1,7 +1,7 @@
 
 
 let NUM_OF_lines = 25; //number of particles.
-let x,y;
+let myrabbit;
 let lines = [];
 let speed;
 let mysound;
@@ -15,8 +15,8 @@ function setup() {
   let canvas = createCanvas(400, 500);
   canvas.parent("p5-canvas");
   mycaption= new caption(20,20);
-  speed = random(0.005, 0.01)
-  y=height/2;
+  myrabbit = new rabbit(200, 100);
+
   
 
 
@@ -29,6 +29,7 @@ function setup() {
 function draw() {
   background(0,50);
   mycaption.display();
+
     if( mouseIsPressed){
         if(mysound.isPlaying()==false){
           mysound.play(); 
@@ -41,29 +42,47 @@ function draw() {
     let p = lines[i];
     p.display();
     p.moveup();
-  
-  //rabbit
-  noStroke();
-  x=noise(frameCount*speed*0.5)*width;
-  fill(225);
-  circle(x-7, y+45, 70);//body
-  fill(220);
-   ellipse(x+20, y+30, 30, 18);//paw
-  fill(235);
-  circle(x-40, y+60,30);//tail
-  fill(215);
-  ellipse(x+10, y+78, 40, 20);//feet
-  ellipse(x, y-40, 20, 50);//left ear
-  fill(225);
-  ellipse(x-10, y-40, 25, 50);// right ear
-  circle(x,y, 52);//head
-  fill(240, 119, 110);
-  circle(x+25, y-5, 8);
-  fill(0);
-  circle(x+5,y-10, 12);//eye
-  
+
+  }
+
+  myrabbit.display();
+  myrabbit.move();
+ 
 
 
+}
+
+class rabbit{
+  constructor(x, y){
+    this.x=x;
+    this.y=y;
+    this.speed = random(0.0025, 0.01)
+  }
+  display(){
+    push();
+    translate(this.x, this.y);
+    noStroke();
+    fill(225);
+    circle(this.x-7, this.y+45, 70);//body
+    fill(220);
+     ellipse(this.x+20, this.y+30, 30, 18);//paw
+    fill(235);
+    circle(this.x-40, this.y+60,30);//tail
+    fill(215);
+    ellipse(this.x+10, this.y+78, 40, 20);//feet
+    ellipse(this.x, this.y-40, 20, 50);//left ear
+    fill(225);
+    ellipse(this.x-10, this.y-40, 25, 50);// right ear
+    circle(this.x,this.y, 52);//head
+    fill(240, 119, 110);
+    circle(this.x+25, this.y-5, 8);
+    fill(0);
+    circle(this.x+5,this.y-10, 12);//eye
+    pop();
+  }
+
+  move(){
+    this.x=noise(frameCount*this.speed*0.5)*width;
   }
 }
 
@@ -102,11 +121,21 @@ class caption{
   constructor(x, y){
     this.x = x;
     this.y= y;
+
+ 
   }
   display(){
-    fill(252, 218, 124);
+    push();
+    translate(this.x, this.y);
+    fill(255);
+    //fill(252, 218, 124);
     textSize(15);
+    textFont('Courier New');
+    textStyle(BOLD);
     text("Click to start!",this.x, this.y, 300, 50);
+    pop();
+
+
         
     
   }

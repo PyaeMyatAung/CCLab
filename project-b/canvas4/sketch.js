@@ -48,10 +48,13 @@ function draw() {
   
   if( mouseIsPressed){
     if(mysound.isPlaying()==false){
-      mysound.play(); 
+      mysound.play();
+      
     }else{
       mysound.pause();
+
   }
+
   }
   
   //change the speed of the bubble
@@ -143,12 +146,32 @@ class caption{
   constructor(x, y){
     this.x = x;
     this.y= y;
+    this.a= 90;
+    this.b=217;
+    this.c=230;
+
+
   }
   display(){
-    fill(19, 47, 82);
+    push();
+    translate(this.x, this.y);
+    fill(255);
     textSize(20);
+    textFont('Courier New');
+    textStyle(BOLD);
     text("Click to listen what's happening!",this.x, this.y, 300, 50);
-        
+    fill(this.a, this.b, this.c);
+      textSize(20);
+      textFont('Courier New');
+      textStyle(BOLD);
+      text("I can breathe!",this.x+500, this.y+100, 600, 100);
+    pop();
     
+
+    if (mouseIsPressed==true){
+      this.a=255;
+      this.b=255;
+      this.c=255;     
+    }
   }
 }

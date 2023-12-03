@@ -183,8 +183,8 @@ class caption{
     fill(126, 198, 54);
     //fill(0);
     textSize(15);
-    //textFont('Courier New');
-    //textStyle(BOLD);
+    textFont('Courier New');
+    textStyle(BOLD);
     text("Click to start!",this.x, this.y, 300, 50);
     text("Use the RIGHT ARROW button.", this.x, this.y+25,300, 50);
     text("To restart, press ENTER", this.x, this.y+50,300, 50);
