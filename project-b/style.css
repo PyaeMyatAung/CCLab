@@ -138,7 +138,7 @@ body{
     position: absolute;
     top: 4500px;
     width: 1000px;
-    background-color: rgb(248, 212, 239);
+    /* background-color: rgb(248, 212, 239); */
     height:100px;
 
 }
