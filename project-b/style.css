@@ -60,7 +60,7 @@ body{
     text-align: center;
     position: absolute;
     top: 1750px;
-    left:150px;
+    left:950px;
     width: 400px;
     
     background-color: aliceblue;
@@ -70,7 +70,7 @@ body{
 .text-2{
     position: absolute;
     top: 1750px;
-    left: 750px;
+    left: 150px;
    /* background-color: beige; */
    text-align: center;
    padding-top: 175px;
@@ -94,11 +94,9 @@ body{
     position: absolute;
     top: 3150px;
     left:200px;
-    width: 400px;
     text-align: center;
     background-color:aliceblue;
-    padding-top:250px;
-    padding-bottom: 250px;
+   height:500px;
     width:1000px;
 }
 
@@ -107,7 +105,7 @@ body{
     top: 3800px;
     left:250px;
   
-    background-color: rgb(230, 249, 228);
+    background-color: rgb(216, 247, 252);
     padding-top:10px;
     padding-bottom:10px;
     text-align: center;
@@ -118,24 +116,21 @@ body{
 .box-6{
     position: absolute;
     top: 4000px;
-    left: 100px;
-   background-color: beige;
+    left: 800px;
    text-align: center;
-   padding-top: 190px;
-   padding-bottom: 190px;
-   width :600px;
+    height:360px;
+   width :576px;
 }
 
 .text-3{
     text-align: center;
     position: absolute;
-    top: 4000px;
-    left: 800px;
-    width: 400px;
-    width: 500px;
-    background-color: aliceblue;
-    padding-top: 190px;
-    padding-bottom: 190px;
+    top: 3935px;
+    left: 100px;
+    width: 600px;
+    /* background-color: aliceblue; */
+    padding-top: 60px;
+    padding-bottom:60px;
     
 }
 
@@ -166,6 +161,15 @@ iframe{
 }
 
 .canvas4Frame{
+    width:100%;
+    height:100%;
+}
+
+.canvas5Frame{
+    width:100%;
+    height:100%;
+}
+.canvas6Frame{
     width:100%;
     height:100%;
 }

@@ -1,0 +1,11 @@
+body{
+    margin: 0px;
+}
+.canvas1Frame{
+    width:1000px;
+    height:500px;
+}
+
+iframe{
+    display:block;
+}

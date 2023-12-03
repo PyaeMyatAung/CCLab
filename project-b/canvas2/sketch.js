@@ -1,4 +1,5 @@
 
+
 let grass;
 let mysound;
 let myRabbit;
@@ -6,10 +7,14 @@ let myCloud;
 let myCloud2;
 let myCloud3;
 let mycaption;
+let hop;
+let fall;
 
 function preload(){
   grass = loadImage("grass.png");
   mysound=loadSound("assets/sound2.mp3")
+  hop= loadSound("assets/pop.mp3")
+  fall= loadSound("assets/fall.mp3")
 }
 
 function setup() {
@@ -33,6 +38,7 @@ function draw() {
   myRabbit.display();
   myRabbit.hop();
   myRabbit.reset();  
+  myRabbit.fall();
   myCloud.display();
   myCloud.move();
   myCloud2.display();
@@ -92,14 +98,25 @@ class Rabbit{
     if(keyCode==RIGHT_ARROW || keyCode==DOWN_ARROW){
       this.x= this.x+10;
       this.y=this.y+30*(sin(this.x*0.06));
+      if(this.y>=560 && this.x<950){
+       
+          hop.play(); 
+   
+      }
+           
     }
+    if(keyCode==LEFT_ARROW && this.x>20){
+      this.x= this.x-10;
+      this.y=this.y-10*(sin(this.x*0.06));
+      
+    }      
     if(this.x>=950){
       if(this.y<1000){
-          this.y+=90;
+          this.y+=200;
           this.x=1060;
          }       
     }
-       
+      
   }
 }
   reset(){
@@ -111,6 +128,17 @@ class Rabbit{
      
   }
   }
+  
+  fall(){
+    if(this.x>938 && this.x<950){
+       if(fall.isPlaying()==false){
+          fall.play(); 
+            }else{
+                fall.pause();
+             }
+       }
+  }
+  
 }
 
 class cloud{
@@ -119,7 +147,9 @@ class cloud{
     this.v = v;
     this.x = 0;
     this.y=0;
+    
   }
+  
   display(){
     push();
     translate(this.u, this.v);
@@ -140,7 +170,6 @@ class cloud{
     if(this.x>=width){
        this.x=0;
        } 
-    
   }
 }
 
@@ -150,7 +179,12 @@ class caption{
     this.y= y;
   }
   display(){
+    //fill(0, 117, 0);
+    fill(126, 198, 54);
+    //fill(0);
     textSize(15);
+    //textFont('Courier New');
+    //textStyle(BOLD);
     text("Click to start!",this.x, this.y, 300, 50);
     text("Use the RIGHT ARROW button.", this.x, this.y+25,300, 50);
     text("To restart, press ENTER", this.x, this.y+50,300, 50);
