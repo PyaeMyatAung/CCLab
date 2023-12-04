@@ -2,16 +2,13 @@ let girl;
 let x, y;
 let r, b, g;
 let f, s, t;
-
 function preload(){
-  girl = loadImage("images/girl.png");
+  girl = loadImage("girl.png")
   
 }
 function setup() {
-  let cnv = createCanvas(400, 400);
-  cnv.parent("canvasWrapper");
-  cnv.style(800,400);
-  cnv.style('z-index','-1');
+  let canvas=createCanvas(400, 400);
+  canvas.parent("p5-canvas");
   r = 247;
   b = 239;
   g = 151;
