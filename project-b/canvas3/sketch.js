@@ -82,10 +82,7 @@ class rabbit{
   }
 
   move(){
-    let dy= mouseY-this.y;
-    let dx= mouseX-this.x;
-    this.x+= dx*0.05;
-    this.y+= dy*0.05;
+    this.x=noise(frameCount*this.speed*0.5)*width/2;
   }
 }
 
@@ -98,6 +95,7 @@ class Lines {
     this.dia = 30;
     this.h= random(100);
     this.l= random(20,200);
+    this.a=0;
   
   }
 
@@ -106,10 +104,14 @@ class Lines {
     push();
     translate(this.x, this.y);
     noStroke();
-    fill(255);
+    fill(this.a);
     rect(0,0,5, this.l);
-
     pop();
+
+    if(mouseIsPressed==true){
+        this.a = 255;
+    }
+
   }
   moveup(){
     this.y= this.y-10;
