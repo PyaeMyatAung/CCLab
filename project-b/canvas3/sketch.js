@@ -82,7 +82,10 @@ class rabbit{
   }
 
   move(){
-    this.x=noise(frameCount*this.speed*0.5)*width/2;
+    let dy= mouseY-this.y;
+    let dx= mouseX-this.x;
+    this.x+= dx*0.05;
+    this.y+= dy*0.05;
   }
 }
 
